@@ -1,0 +1,17 @@
+{
+  "name": "hwxs-demo",
+  "description": "Hardware Access WebAPI Demos",
+  "launch_path": "/",
+  "icons": {
+    "512": "/img/icon-512.png",
+    "128": "/img/icon-128.png"
+  },
+  "permissions": {
+    "audio-capture": {
+      "description": "Required to capture audio using getUserMedia()"
+    },
+    "video-capture": {
+      "description": "Required to capture video using getUserMedia()"
+    }
+  }
+}

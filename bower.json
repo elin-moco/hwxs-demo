@@ -1,0 +1,26 @@
+{
+  "name": "hwxs-demo",
+  "version": "1.0.0",
+  "authors": [
+    "Eddie Lin <elin@mozilla.com>"
+  ],
+  "description": "Hardware Access WebAPI Demos",
+  "main": "index.html",
+  "keywords": [
+    "hardware",
+    "sensor",
+    "webapi"
+  ],
+  "license": "MPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "normalize.css": "~3.0.3"
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hardware Access WebAPI Demo</title>
+  <link rel="stylesheet" href="/vendor/normalize.css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+<label for="drawer-toggle" id="drawer-toggle-label"></label>
+<header id="title-bar">Hardware WebAPI Demos</header>
+<nav id="drawer">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#ambient-light-sensor">Ambient Light Sensor API</a></li>
+    <li><a href="#battery-status">Battery Status API</a></li>
+    <li><a href="#geolocation">Geolocation API</a></li>
+    <li><a href="#pointer-lock">PointerLock API</a></li>
+    <li><a href="#proximity">Proximity API</a></li>
+    <li><a href="#device-orientation">Device Orientation API</a></li>
+    <li><a href="#screen-orientation">Screen Orientation API</a></li>
+    <li><a href="#vibration">Vibration API</a></li>
+    <li><a href="#media-devices">MediaDevices API</a></li>
+  </ul>
+</nav>
+<div id="page-content">
+  <div id="index" title="Hardware WebAPI Demos">
+    <p>This app demonstrate hardware access WebAPIs.</p>
+    <p>Click menu button to begin.</p>
+  </div>
+  <div id="ambient-light-sensor" title="Ambient Light Sensor API">
+    <span id="lightness">0</span>
+  </div>
+  <div id="battery-status" title="Battery Status API">
+    <span id="battery-remain">0%</span>,
+    <span id="battery-charging">Not Charging</span>
+  </div>
+  <div id="geolocation" title="Geolocation API">
+    <span id="latitude">0</span>,
+    <span id="longitude">0</span>,
+    <span id="altitude">0</span>,
+    <span id="accuracy"></span>
+  </div>
+  <div id="pointer-lock" title="PointerLock API">
+    <p>Click anywhere to request PointerLock, ESC to exit PointerLock.</p>
+    <span id="mouse"></span>
+  </div>
+  <div id="proximity" title="Proximity API">
+    <span id="distance">0</span>,
+    <span id="near">Far</span>
+  </div>
+  <div id="device-orientation" title="Device Orientation API">
+    <ul>
+      <li>
+        Orientation:<br>
+        <pre id="orientation"></pre>
+      </li>
+      <li>
+        Motion: <br>
+        <pre id="motion"></pre>
+      </li>
+    </ul>
+  </div>
+  <div id="screen-orientation" title="Screen Orientation API">
+    <span id="screen"></span>
+  </div>
+  <div id="vibration" title="Vibration API">
+    <button id="vibrate">Vibrate me!</button>
+  </div>
+  <div id="media-devices" title="MediaDevices API">
+    <video id="video" autoplay="autoplay"></video>
+  </div>
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
