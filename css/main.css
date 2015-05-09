@@ -13,8 +13,8 @@ header {
     padding: 10px 10px 10px 50px;
     font-size: 20px;
     line-height: 30px;
-    z-index: 0;
-    box-shadow: 1px 1px 1px #000000;
+    z-index: 1000;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 #back {
@@ -24,7 +24,9 @@ header {
     height: 50px;
     left: 0;
     top: 0;
+    z-index: 1001;
 }
+
 #back:hover:before {
     content: "";
     display: block;
@@ -33,6 +35,7 @@ header {
     opacity: 0.5;
     background: #FFFFFF;
 }
+
 #back:after {
     content: '';
     display: block;
@@ -44,11 +47,8 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-
     border: solid #FFFFFF;
     border-width: 3px 0 0 3px;
-
-    /*Rotate the L 45 degrees to turn it into a checkmark*/
     transform: rotate(-45deg);
 }
 
@@ -64,20 +64,13 @@ header {
 }
 
 .supported > span:after {
-    /*Add another block-level blank space*/
     content: '';
     display: block;
-
-    /*Make it a small rectangle so the border will create an L-shape*/
     width: 6px;
     height: 12px;
-
-    /*Add a white border on the bottom and left, creating that 'L' */
     border: solid #FFFFFF;
     border-width: 0 3px 3px 0;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-
-    /*Rotate the L 45 degrees to turn it into a checkmark*/
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     transform: rotate(45deg);
 }
 
@@ -103,21 +96,21 @@ header {
 
 .unsupported > span:before {
     transform: rotate(45deg);
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .unsupported > span:after {
     transform: rotate(-45deg);
-    box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.supported {
+#index ul li a.supported {
     border-top: 1px solid rgba(255, 255, 255 0.9);
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: linear-gradient(#69e55f, #59ba50);
 }
 
-.supported:hover, .supported:active {
+#index ul li a.supported:hover, #index ul li a.supported:active {
     border-top: 1px solid rgba(0, 0, 0, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255 0.1);
     background: linear-gradient(#59ba50, #69e55f);
@@ -135,13 +128,13 @@ header {
     opacity: 0.2;
 }
 
-.unsupported {
+#index ul li a.unsupported {
     border-top: 1px solid rgba(255, 255, 255 0.9);
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: linear-gradient(#ff5156, #da4449);
 }
 
-.unsupported:hover, .unsupported:active {
+#index ul li a.unsupported:hover, #index ul li a.unsupported:active {
     border-top: 1px solid rgba(0, 0, 0, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255 0.1);
     background: linear-gradient(#da4449, #ff5156);
@@ -158,7 +151,10 @@ header {
     color: #FFFFFF;
     text-decoration: none;
     position: relative;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(255, 255, 255 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: linear-gradient(#888888, #666666);
 }
 
 #index ul li a:hover {

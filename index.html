@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hardware Access WebAPI Demo</title>
-  <link rel="stylesheet" href="/vendor/normalize.css/normalize.css">
+  <link rel="stylesheet" href="/css/libs/normalize.css">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -16,16 +16,16 @@
     <p>Below is a WebAPI compatibility checklist for your user agent.</p>
     <p>Click on an supported (green) API to begin.</p>
     <ul>
-      <li><a class="supported" href="#proximity">Proximity API<span></span></a></li>
-      <li><a class="supported" href="#ambient-light-sensor">Ambient Light Sensor API<span></span></a></li>
-      <li><a class="supported" href="#battery-status">Battery Status API<span></span></a></li>
-      <li><a class="supported" href="#touch">Touch API<span></span></a></li>
-      <li><a class="unsupported" href="#pointer-lock">PointerLock API<span></span></a></li>
-      <li><a class="supported" href="#device-orientation">Device Orientation API<span></span></a></li>
-      <li><a class="supported" href="#screen-orientation">Screen Orientation API<span></span></a></li>
-      <li><a class="supported" href="#vibration">Vibration API<span></span></a></li>
-      <li><a class="supported" href="#geolocation">Geolocation API<span></span></a></li>
-      <li><a class="supported" href="#media-devices">MediaDevices API<span></span></a></li>
+      <li><a class="proximity" href="#proximity">Proximity API<span></span></a></li>
+      <li><a class="ambient-light-sensor" href="#ambient-light-sensor">Ambient Light Sensor API<span></span></a></li>
+      <li><a class="battery-status" href="#battery-status">Battery Status API<span></span></a></li>
+      <li><a class="touch" href="#touch">Touch API<span></span></a></li>
+      <li><a class="pointer-lock" href="#pointer-lock">PointerLock API<span></span></a></li>
+      <li><a class="device-orientation" href="#device-orientation">Device Orientation API<span></span></a></li>
+      <li><a class="screen-orientation" href="#screen-orientation">Screen Orientation API<span></span></a></li>
+      <li><a class="vibration" href="#vibration">Vibration API<span></span></a></li>
+      <li><a class="geolocation" href="#geolocation">Geolocation API<span></span></a></li>
+      <li><a class="media-devices" href="#media-devices">MediaDevices API<span></span></a></li>
     </ul>
   </div>
   <div id="proximity" title="Proximity API">
@@ -50,7 +50,7 @@
     <pre id="touch-delta"></pre>
   </div>
   <div id="pointer-lock" title="PointerLock API">
-    <p>Click anywhere to request PointerLock, ESC to exit PointerLock.</p>
+    <p>Click anywhere to request PointerLock (mouse required), ESC to exit PointerLock.</p>
     <span id="mouse-delta"></span>
   </div>
   <div id="device-orientation" title="Device Orientation API">
@@ -75,6 +75,7 @@
     <video id="video" autoplay="autoplay"></video>
   </div>
 </div>
+<script type="text/javascript" src="js/libs/modernizr.hwxs.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
