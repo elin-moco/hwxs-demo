@@ -1,6 +1,6 @@
 # Hardware Access WebAPI Demo
 
-This app demonstrate how to make use of WebAPIs to access hardware/sensor.
+This app demonstrate how to make use of [WebAPIs][webapi] to access hardware/sensor.
 
 Currently we have 9 sets of API demos:
 

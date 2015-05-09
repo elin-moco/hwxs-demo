@@ -1,6 +1,8 @@
 (function() {
   'use strict';
 
+  var backButton = document.getElementById('back');
+
   var Index = {
     hash: 'index',
 
@@ -62,6 +64,31 @@
     }
   };
 
+  var Touch = {
+    elem: document.getElementById('touch'),
+    startHandler: function(e) {
+
+    },
+    moveHandler: function(e) {
+      var touches = e.changedTouches;
+
+      document.getElementById('touch-coords').textContent = touches[0].pageX + ", " + touches[0].pageY + '\n';
+    },
+    endHandler: function(e) {
+
+    },
+    init: function() {
+      Touch.elem.addEventListener('touchstart', Touch.startHandler);
+      Touch.elem.addEventListener('touchmove', Touch.moveHandler);
+      Touch.elem.addEventListener('touchend', Touch.endHandler);
+    },
+    destroy: function() {
+      Touch.elem.removeEventListener('touchstart', Touch.startHandler);
+      Touch.elem.removeEventListener('touchmove', Touch.moveHandler);
+      Touch.elem.removeEventListener('touchend', Touch.endHandler);
+    }
+  };
+
   var PointerLock = {
     elem: document.getElementById('pointer-lock'),
     mouseHandler: function(e) {
@@ -74,7 +101,7 @@
         e.mozMovementY ||
         e.webkitMovementY ||
         0;
-      document.getElementById('mouse').textContent =
+      document.getElementById('mouse-delta').textContent =
         movementX + ', ' + movementY;
     },
     handler: function() {
@@ -209,6 +236,7 @@
     'ambient-light-sensor': AmbientLightSensor,
     'battery-status': BatteryStatus,
     'geolocation': Geolocation,
+    'touch': Touch,
     'pointer-lock': PointerLock,
     'proximity': Proximity,
     'device-orientation': DeviceOrientation,
@@ -224,8 +252,13 @@
       demoRoutes[prevDemoHash].destroy();
     }
     var demoHash = location.hash ? location.hash.substr(1) : Index.hash;
+    if (demoHash == Index.hash) {
+      backButton.style.display = 'none';
+    }
+    else {
+      backButton.style.display = 'block';
+    }
     prevDemoHash = demoHash;
-    document.getElementById('drawer-toggle').checked = false;
     var demoElem = document.getElementById(demoHash);
     demoElem.style.display = 'block';
     document.getElementById('title-bar').textContent = demoElem.title;
