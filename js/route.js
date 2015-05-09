@@ -14,11 +14,14 @@
 
   window.demoRoutes.index = Index;
 
-  document.getElementById('index').querySelector('.unsupported').onclick =
-    function(e) {
+  var unsupportedElements =
+    document.getElementById('index').querySelectorAll('.unsupported');
+  for (var i in unsupportedElements) {
+    unsupportedElements[i].onclick = function(e) {
       e.preventDefault();
       alert('API not supported on your device!');
     };
+  }
 
   var prevDemoHash = Index.hash;
 
