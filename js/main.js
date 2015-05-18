@@ -2,18 +2,39 @@
 (function() {
   'use strict';
 
+  window.MovingAverage = (function(len) {
+    var length = 10;
+    if (len) {
+      length = len;
+    }
+    var history = [];
+    var move = function(value) {
+      history.push(value);
+      if (history.length < length) {
+        return null;
+      }
+      else {
+        history.shift();
+        return history.reduce(function(sum, current) { return sum + current; }) / length;
+      }
+    };
+    return {
+      move: move
+    }
+  });
+
   Modernizr.addTest('pointerlock2',
       undefined !== Modernizr.prefixed('pointerLockElement', document));
 
   window.compatibility = {
-    'ambient-light-sensor': undefined !== window.ondevicelight,
+    'ambient-light-sensor': undefined !== window.ondevicelight && Modernizr.touch,
     'battery-status': Modernizr.battery,
     'geolocation': Modernizr.geolocation,
     'touch': Modernizr.touch,
-    'pointer-lock': Modernizr.pointerlock2,
+    'pointer-lock': Modernizr.pointerlock2 && !Modernizr.touch,
     'proximity': undefined !== window.onuserproximity,
-    'device-orientation': Modernizr.deviceorientation,
-    'screen-orientation': undefined !== screen.onmozorientationchange,
+    'device-orientation': Modernizr.deviceorientation && Modernizr.touch,
+    'screen-orientation': undefined !== screen.onmozorientationchange && Modernizr.touch,
     'vibration': Modernizr.vibrate,
     'media-devices': Modernizr.getusermedia
   };

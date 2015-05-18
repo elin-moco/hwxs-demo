@@ -13,6 +13,7 @@
 <div id="page-content">
   <div id="index" title="Hardware WebAPI Demos">
     <p>This app demonstrate hardware access WebAPIs usage.</p>
+    <p>See Github for the <a href="https://github.com/elin-moco/hwxs-demo" target="_blank">source code</a> and MDN for <a href="https://developer.mozilla.org/en-US/docs/WebAPI">WebAPI documentations</a>.</p>
     <p>Below is a WebAPI compatibility checklist for your user agent.</p>
     <p>Click on an supported (green) API to begin.</p>
     <ul>
@@ -46,18 +47,35 @@
     <span id="accuracy"></span>
   </div>
   <div id="touch" title="Touch API">
-    <pre id="touch-coords"></pre>
-    <pre id="touch-delta"></pre>
+    <canvas></canvas>
+    <ul>
+      <li>
+        <pre id="touch-coords"></pre>
+      </li>
+      <li>
+        <pre id="touch-delta"></pre>
+      </li>
+    </ul>
   </div>
   <div id="pointer-lock" title="PointerLock API">
+    <canvas></canvas>
     <p>Click anywhere to request PointerLock (mouse required), ESC to exit PointerLock.</p>
-    <span id="mouse-delta"></span>
+    <ul>
+      <li>
+        <span id="mouse-delta"></span>
+      </li>
+    </ul>
   </div>
   <div id="device-orientation" title="Device Orientation API">
+    <canvas></canvas>
     <ul>
       <li>
         Orientation:<br>
         <pre id="orientation"></pre>
+      </li>
+      <li>
+        Moving Average:<br>
+        <pre id="moving-avg"></pre>
       </li>
       <li>
         Motion: <br>
@@ -76,6 +94,7 @@
   </div>
 </div>
 <script type="text/javascript" src="js/libs/modernizr.hwxs.js"></script>
+<script type="text/javascript" src="js/cube.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

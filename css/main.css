@@ -196,15 +196,46 @@ header {
 }
 
 #touch {
+    position: absolute;
     display: none;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
 
-#pointer-lock {
-    display: none;
+#touch > canvas {
+    position: absolute;
+    display: block;
     width: 100%;
     height: 100%;
+}
+
+#touch > ul {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+#pointer-lock {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#pointer-lock > canvas {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#pointer-lock > ul {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
 }
 
 #proximity {
@@ -212,7 +243,18 @@ header {
 }
 
 #device-orientation {
+    position: absolute;
     display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#device-orientation > ul {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
 }
 
 #screen-orientation {

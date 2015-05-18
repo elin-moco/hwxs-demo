@@ -20,11 +20,13 @@
       Touch.elem.addEventListener('touchstart', Touch.startHandler);
       Touch.elem.addEventListener('touchmove', Touch.moveHandler);
       Touch.elem.addEventListener('touchend', Touch.endHandler);
+      Cube3D.load('touch', 'canvas');
     },
     destroy: function() {
       Touch.elem.removeEventListener('touchstart', Touch.startHandler);
       Touch.elem.removeEventListener('touchmove', Touch.moveHandler);
       Touch.elem.removeEventListener('touchend', Touch.endHandler);
+      Cube3D.unload();
     }
   };
 

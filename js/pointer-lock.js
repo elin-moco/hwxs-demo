@@ -30,9 +30,11 @@
         document.mozExitPointerLock ||
         document.webkitExitPointerLock;
       PointerLock.elem.addEventListener('click', PointerLock.handler);
+      Cube3D.load('pointer-lock', 'canvas');
     },
     destroy: function() {
       PointerLock.elem.removeEventListener('click', PointerLock.handler);
+      Cube3D.unload();
     }
   };
 
