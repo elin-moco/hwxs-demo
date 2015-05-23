@@ -8,8 +8,22 @@
         event.near ? 'Near' : 'Far';
     },
     deviceHandler: function(event) {
+      var proximity = event.value;
       document.getElementById('distance').textContent =
-        event.value + '(' + event.min + '~' + event.max + ')';
+        proximity + '(' + event.min + '~' + event.max + ')';
+      if (proximity > event.max) {
+        proximity = event.max;
+      }
+      else if (proximity < event.min) {
+        proximity = event.min;
+      }
+      var degree = (proximity - event.max) / (event.min - event.max);
+      var sun = document.getElementById('sun');
+      sun.style.boxShadow = '0 0 ' + (degree + 1) + 'em ' + (degree + 1) + 'em '
+        + 'rgba(255, ' + (1 - degree) * 255 + ', 0, 0.75)';
+      var moon = document.getElementById('moon');
+      moon.style.marginLeft = -1.5 * degree + 'em';
+      moon.style.marginTop = -1.85 * degree + 'em';
     },
     init: function() {
       window.addEventListener('userproximity', Proximity.userHandler);

@@ -1,0 +1,93 @@
+@-moz-keyframes pulsate {
+    0%, 100% {
+        opacity: 0.88;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes pulsate {
+    0%, 100% {
+        opacity: 0.88;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulsate {
+    0%, 100% {
+        opacity: 0.88;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+#bulb {
+    position: absolute;
+    vertical-align: middle;
+    display: block;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    font-size: 2em;
+    width: 2em;
+    height: 2em;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 0 0 1em 1em rgba(255, 255, 0, 0.75);
+    -webkit-box-shadow: 0 0 1em 1em rgba(255, 255, 0, 0.75);
+    box-shadow: 0 0 1em 1em rgba(255, 255, 0, 0.75);
+    -moz-animation: pulsate 0.15s infinite;
+    -webkit-animation: pulsate 0.15s infinite;
+    animation: pulsate 0.15s infinite;
+}
+
+#sun {
+    position: absolute;
+    vertical-align: middle;
+    display: block;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    font-size: 2em;
+    width: 2em;
+    height: 2em;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 0 0 1em 1em rgba(255, 255, 0, 0.75);
+    -webkit-box-shadow: 0 0 1em 1em rgba(255, 255, 0, 0.75);
+    box-shadow: 0 0 1em 1em rgba(255, 255, 0, 0.75);
+    -moz-animation: pulsate 0.15s infinite;
+    -webkit-animation: pulsate 0.15s infinite;
+    animation: pulsate 0.15s infinite;
+    transition: box-shadow 1s ease-in-out;
+}
+
+#moon {
+    position: absolute;
+    vertical-align: middle;
+    display: block;
+    margin-left: 0;
+    margin-top: 0;
+    top: 55%;
+    left: 55%;
+    font-size: 2em;
+    width: 2em;
+    height: 2em;
+    background: #000000;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    transition: margin 1s ease-in-out;
+}

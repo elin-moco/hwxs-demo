@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hardware Access WebAPI Demo</title>
   <link rel="stylesheet" href="/css/libs/normalize.css">
+  <link rel="stylesheet" href="/css/light.css">
   <link rel="stylesheet" href="/css/smartphone.css">
   <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -31,11 +32,24 @@
     </ul>
   </div>
   <div id="proximity" title="Proximity API">
-    <span id="distance">0</span>,
-    <span id="near">Far</span>
+    <ul>
+      <li>Device Proximity:
+        <span id="distance">0</span>
+      </li>
+      <li>User Proximity:
+        <span id="near">Far</span>
+      </li>
+      <div id="sun"></div>
+      <div id="moon"></div>
+    </ul>
   </div>
   <div id="ambient-light-sensor" title="Ambient Light Sensor API">
-    <span id="lightness">0</span>
+    <ul>
+      <li>Lightness:
+        <span id="lightness">0</span>
+      </li>
+    </ul>
+    <div id="bulb"></div>
   </div>
   <div id="battery-status" title="Battery Status API">
     <span id="battery-remain">0%</span>,

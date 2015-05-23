@@ -1,9 +1,9 @@
 /* global Modernizr */
 (function() {
   'use strict';
-  window.requestAnimationFrame =
-    window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+//  window.requestAnimationFrame =
+//    window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+//    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
   window.MovingAverage = (function(len) {
     var length = 10;

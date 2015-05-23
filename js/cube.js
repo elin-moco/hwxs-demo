@@ -10,7 +10,7 @@
 var Cube3D = (function() {
   // ======== private vars ========
   var scr, canvas, cubes, faces, nx, ny, nw, nh, xm = 0, ym = 0, cx = 50, cy = 50, cz = 0, cxb = 0, cyb = 0;
-  var alpha, fps = 0, ncube, npoly, faceOver, drag, moved, startX = 0, startY = 0;
+  var alpha, fps = 0, ncube, npoly, faceOver;
   var cosY, sinY, cosX, sinX, cosZ, sinZ, minZ, angleY = 0, angleX = 0, angleZ = 0;
   var bkgColor1 = "rgba(0,0,0,1)";
   var bkgColor2 = "rgba(0,0,0,1)";
@@ -232,59 +232,6 @@ var Cube3D = (function() {
     // ---- init script ----
     scr = document.getElementById(screenSelector);
     canvas = new Canvas(scr.querySelector(canvasSelector));
-    // ======== unified touch/mouse events handler ========
-//    scr.ontouchstart = scr.onmousedown = function(e) {
-//      if (!running) return true;
-//      // ---- touchstart ----
-//      if (e.target !== canvas.container) return;
-//      e.preventDefault(); // prevents scrolling
-//      if (scr.setCapture) scr.setCapture();
-//      moved = false;
-//      drag = true;
-//      startX = (e.clientX !== undefined ? e.clientX : e.touches[0].clientX) - nx;
-//      startY = (e.clientY !== undefined ? e.clientY : e.touches[0].clientY) - ny;
-//    };
-//    scr.ontouchmove = scr.onmousemove = function(e) {
-//      if (!running) return true;
-//      // ---- touchmove ----
-//      e.preventDefault();
-//      xm = (e.clientX !== undefined ? e.clientX : e.touches[0].clientX) - nx;
-//      ym = (e.clientY !== undefined ? e.clientY : e.touches[0].clientY) - ny;
-//      detectFaceOver();
-//      if (drag) {
-//        cx = cxb + (xm - startX);
-//        cy = cyb - (ym - startY);
-//      }
-//      if (Math.abs(xm - startX) > 10 || Math.abs(ym - startY) > 10) {
-//        // ---- if pointer moves then cancel the tap/click ----
-//        moved = true;
-//      }
-//    };
-//    scr.ontouchend = scr.onmouseup = function(e) {
-//      if (!running) return true;
-//      // ---- touchend ----
-//      e.preventDefault();
-//      if (scr.releaseCapture) scr.releaseCapture();
-//      drag = false;
-//      cxb = cx;
-//      cyb = cy;
-//      if (!moved) {
-//        // ---- click/tap ----
-//        xm = startX;
-//        ym = startY;
-//      }
-//    };
-//    scr.ontouchcancel = function(e) {
-//      if (!running) return true;
-//      // ---- reset ----
-//      if (scr.releaseCapture) scr.releaseCapture();
-//      moved = false;
-//      drag = false;
-//      cxb = cx;
-//      cyb = cy;
-//      startX = 0;
-//      startY = 0;
-//    };
     // ---- multi-touch gestures ----
     document.addEventListener('gesturechange', function(e) {
       if (!running) return true;
