@@ -263,10 +263,12 @@ header {
 
 #vibration {
     display: none;
+    text-align: center;
 }
 
 #media-devices {
     display: none;
+    text-align: center;
 }
 
 #index p a, #index p a:link {
@@ -285,4 +287,35 @@ header {
     display: block;
     width: 320px;
     height: 320px;
+}
+
+#gear {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    font-size: 10em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.spinning {
+    animation: spin .5s infinite linear;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }

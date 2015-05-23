@@ -3,16 +3,38 @@
 
   var Vibration;
   Vibration = {
-    handler: function() {
-      window.navigator.vibrate([200, 100, 200]);
+    gear: null,
+    intervalId: null,
+    vibrate: false,
+    startHandler: function() {
+      Vibration.vibrate = true;
+      if (!Vibration.gear.classList.contains('spinning')) {
+        Vibration.gear.classList.add('spinning');
+      }
+    },
+    endHandler: function() {
+      Vibration.vibrate = false;
+      Vibration.gear.classList.remove('spinning');
     },
     init: function() {
-      document.getElementById('vibrate').addEventListener('click',
-        Vibration.handler);
+      Vibration.gear = document.getElementById('gear');
+      Vibration.intervalId = setInterval(function() {
+        if (Vibration.vibrate) {
+          window.navigator.vibrate(500);
+        }
+      }, 500);
+
+      Vibration.gear.addEventListener('touchstart',
+        Vibration.startHandler);
+      Vibration.gear.addEventListener('touchend',
+        Vibration.endHandler);
     },
     destroy: function() {
-      document.getElementById('vibrate').removeEventListener('click',
-        Vibration.handler);
+      Vibration.gear.removeEventListener('touchstart',
+        Vibration.startHandler);
+      Vibration.gear.removeEventListener('touchend',
+        Vibration.endHandler);
+      clearInterval(Vibration.intervalId);
     }
   };
 
