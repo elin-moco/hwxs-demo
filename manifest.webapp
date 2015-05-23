@@ -1,7 +1,8 @@
 {
   "name": "hwxs-demo",
   "description": "Hardware Access WebAPI Demos",
-  "launch_path": "/",
+  "type": "privileged",
+  "launch_path": "/index.html",
   "icons": {
     "512": "/img/icon-512.png",
     "128": "/img/icon-128.png"

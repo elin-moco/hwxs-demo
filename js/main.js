@@ -1,6 +1,9 @@
 /* global Modernizr */
 (function() {
   'use strict';
+  window.requestAnimationFrame =
+    window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
   window.MovingAverage = (function(len) {
     var length = 10;
@@ -27,15 +30,15 @@
       undefined !== Modernizr.prefixed('pointerLockElement', document));
 
   window.compatibility = {
-    'ambient-light-sensor': undefined !== window.ondevicelight && Modernizr.touch,
+    'ambient-light-sensor': undefined !== window.ondevicelight,
     'battery-status': Modernizr.battery,
     'geolocation': Modernizr.geolocation,
     'touch': Modernizr.touch,
     'pointer-lock': Modernizr.pointerlock2 && !Modernizr.touch,
-    'proximity': undefined !== window.onuserproximity,
+    'proximity': undefined !== window.onuserproximity && Modernizr.touch,
     'device-orientation': Modernizr.deviceorientation && Modernizr.touch,
     'screen-orientation': undefined !== screen.onmozorientationchange && Modernizr.touch,
-    'vibration': Modernizr.vibrate,
+    'vibration': Modernizr.vibrate && Modernizr.touch,
     'media-devices': Modernizr.getusermedia
   };
 

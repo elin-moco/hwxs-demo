@@ -214,7 +214,7 @@ header {
 #touch > ul {
     position: absolute;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
 }
 
 #pointer-lock {
@@ -235,7 +235,7 @@ header {
 #pointer-lock > ul {
     position: absolute;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
 }
 
 #proximity {
@@ -254,7 +254,7 @@ header {
 #device-orientation > ul {
     position: absolute;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
 }
 
 #screen-orientation {
@@ -267,4 +267,16 @@ header {
 
 #media-devices {
     display: none;
+}
+
+#index p a, #index p a:link {
+    color: #3DAFE3;
+}
+
+.invert {
+  -webkit-filter: invert(1);
+  -moz-filter: invert(1);
+  -o-filter: invert(1);
+  -ms-filter: invert(1);
+  filter: invert(1);
 }
