@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hardware Access WebAPI Demo</title>
   <link rel="stylesheet" href="/css/libs/normalize.css">
+  <link rel="stylesheet" href="/css/smartphone.css">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -41,10 +42,15 @@
     <span id="battery-charging">Not Charging</span>
   </div>
   <div id="geolocation" title="Geolocation API">
-    <span id="latitude">0</span>,
-    <span id="longitude">0</span>,
-    <span id="altitude">0</span>,
-    <span id="accuracy"></span>
+    <div id="map"></div>
+    <ul>
+      <li>Latitude:
+        <span id="latitude">0</span>
+      </li>
+      <li>Longitude:
+        <span id="longitude">0</span>
+      </li>
+    </ul>
   </div>
   <div id="touch" title="Touch API">
     <canvas></canvas>
@@ -83,7 +89,13 @@
     </ul>
   </div>
   <div id="screen-orientation" title="Screen Orientation API">
-    <span id="screen"></span>
+    <ul>
+      <li>
+        Orientation:
+        <span id="screen"></span>
+      </li>
+    </ul>
+    <div id="smartphone"></div>
   </div>
   <div id="vibration" title="Vibration API">
     <button id="vibrate">Vibrate me!</button>

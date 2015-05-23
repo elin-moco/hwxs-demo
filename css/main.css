@@ -280,3 +280,9 @@ header {
   -ms-filter: invert(1);
   filter: invert(1);
 }
+
+#map {
+    display: block;
+    width: 320px;
+    height: 320px;
+}
