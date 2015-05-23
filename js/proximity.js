@@ -23,7 +23,7 @@
         + 'rgba(255, ' + (1 - degree) * 255 + ', 0, 0.75)';
       var moon = document.getElementById('moon');
       moon.style.marginLeft = -1.5 * degree + 'em';
-      moon.style.marginTop = -1.85 * degree + 'em';
+      moon.style.marginTop = -1.83 * degree + 'em';
     },
     init: function() {
       window.addEventListener('userproximity', Proximity.userHandler);

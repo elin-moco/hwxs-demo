@@ -5,30 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hardware Access WebAPI Demo</title>
   <link rel="stylesheet" href="/css/libs/normalize.css">
+  <link rel="stylesheet" href="/css/libs/font-awesome.min.css">
   <link rel="stylesheet" href="/css/light.css">
   <link rel="stylesheet" href="/css/smartphone.css">
+  <link rel="stylesheet" href="/css/battery.css">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 <header id="title-bar">Hardware WebAPI Demos</header>
 <a id="back" href="#"></a>
+
 <div id="page-content">
   <div id="index" title="Hardware WebAPI Demos">
     <p>This app demonstrate hardware access WebAPIs usage.</p>
-    <p>See Github for the <a href="https://github.com/elin-moco/hwxs-demo" target="_blank">source code</a> and MDN for <a href="https://developer.mozilla.org/en-US/docs/WebAPI">WebAPI documentations</a>.</p>
+
+    <p>See Github for the <a href="https://github.com/elin-moco/hwxs-demo"
+                             target="_blank">source code</a> and MDN for <a
+            href="https://developer.mozilla.org/en-US/docs/WebAPI">WebAPI
+      documentations</a>.</p>
+
     <p>Below is a WebAPI compatibility checklist for your user agent.</p>
+
     <p>Click on an supported (green) API to begin.</p>
     <ul>
-      <li><a class="proximity" href="#proximity">Proximity API<span></span></a></li>
-      <li><a class="ambient-light-sensor" href="#ambient-light-sensor">Ambient Light Sensor API<span></span></a></li>
-      <li><a class="battery-status" href="#battery-status">Battery Status API<span></span></a></li>
+      <li><a class="proximity" href="#proximity">Proximity API<span></span></a>
+      </li>
+      <li><a class="ambient-light-sensor" href="#ambient-light-sensor">Ambient
+        Light Sensor API<span></span></a></li>
+      <li><a class="battery-status" href="#battery-status">Battery Status
+        API<span></span></a></li>
       <li><a class="touch" href="#touch">Touch API<span></span></a></li>
-      <li><a class="pointer-lock" href="#pointer-lock">PointerLock API<span></span></a></li>
-      <li><a class="device-orientation" href="#device-orientation">Device Orientation API<span></span></a></li>
-      <li><a class="screen-orientation" href="#screen-orientation">Screen Orientation API<span></span></a></li>
-      <li><a class="vibration" href="#vibration">Vibration API<span></span></a></li>
-      <li><a class="geolocation" href="#geolocation">Geolocation API<span></span></a></li>
-      <li><a class="media-devices" href="#media-devices">MediaDevices API<span></span></a></li>
+      <li><a class="pointer-lock" href="#pointer-lock">PointerLock
+        API<span></span></a></li>
+      <li><a class="device-orientation" href="#device-orientation">Device
+        Orientation API<span></span></a></li>
+      <li><a class="screen-orientation" href="#screen-orientation">Screen
+        Orientation API<span></span></a></li>
+      <li><a class="vibration" href="#vibration">Vibration API<span></span></a>
+      </li>
+      <li><a class="geolocation" href="#geolocation">Geolocation
+        API<span></span></a></li>
+      <li><a class="media-devices" href="#media-devices">MediaDevices
+        API<span></span></a></li>
     </ul>
   </div>
   <div id="proximity" title="Proximity API">
@@ -39,9 +57,9 @@
       <li>User Proximity:
         <span id="near">Far</span>
       </li>
-      <div id="sun"></div>
-      <div id="moon"></div>
     </ul>
+    <div id="sun"></div>
+    <div id="moon"></div>
   </div>
   <div id="ambient-light-sensor" title="Ambient Light Sensor API">
     <ul>
@@ -52,8 +70,12 @@
     <div id="bulb"></div>
   </div>
   <div id="battery-status" title="Battery Status API">
-    <span id="battery-remain">0%</span>,
-    <span id="battery-charging">Not Charging</span>
+    <ul>
+      <li>
+        <span id="battery-remain">0% (Not Charging)</span>
+      </li>
+    </ul>
+    <div id="battery"><div id="bolt" class="fa fa-bolt"></div></div>
   </div>
   <div id="geolocation" title="Geolocation API">
     <div id="map"></div>
@@ -81,7 +103,8 @@
   </div>
   <div id="pointer-lock" title="PointerLock API">
     <canvas></canvas>
-    <p>Click anywhere to request PointerLock (mouse required), ESC to exit PointerLock.</p>
+    <p>Click anywhere to request PointerLock (mouse required), ESC to exit
+      PointerLock.</p>
     <ul>
       <li>
         Mouse Delta:
