@@ -7,6 +7,9 @@
     "128": "/img/icon-128.png"
   },
   "permissions": {
+    "geolocation": {
+      "description": "Required for google maps demo"
+    },
     "audio-capture": {
       "description": "Required to capture audio using getUserMedia()"
     },

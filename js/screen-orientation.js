@@ -15,6 +15,9 @@
         'rotate('+ScreenOrientation.angles[screen.mozOrientation]+')';
     },
     init: function() {
+      //FIXME: this is to enable screen orientation in packaged app.
+      window.addEventListener('deviceorientation',
+        function() {}, true);
       ScreenOrientation.handler();
       screen.addEventListener('mozorientationchange',
         ScreenOrientation.handler);
