@@ -26,8 +26,8 @@
     options: null,
     map: null,
     geoHandler: function() {
-      Geolocation.watchId = navigator.geolocation.watchPosition(
-        function(position) {
+      var updatePosition = function(position) {
+          console.log('getCurrentPosition');
           document.getElementById('latitude').textContent =
             position.coords.latitude;
           document.getElementById('longitude').textContent =
@@ -55,7 +55,9 @@
             map: Geolocation.map,
             title: 'Hello World!'
           });
-        });
+      };
+      navigator.geolocation.getCurrentPosition(updatePosition);
+      Geolocation.watchId = navigator.geolocation.watchPosition(updatePosition);
     },
     init: function() {
       window.initMap = Geolocation.geoHandler;
