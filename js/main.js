@@ -6,7 +6,7 @@
 //    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
   window.MovingAverage = (function(len) {
-    var length = 10;
+    var length = 5;
     if (len) {
       length = len;
     }

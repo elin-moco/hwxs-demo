@@ -4,8 +4,10 @@
   var movAvgA = MovingAverage();
   var movAvgB = MovingAverage();
   var movAvgG = MovingAverage();
-  var SKIP_COUNT = 30;
-  var doEvtCnt = 0;
+  var O_SKIP_COUNT = 2;
+  var oEventCount = 0;
+  var M_SKIP_COUNT = 2;
+  var mEventCount = 0;
 
   var DeviceOrientation;
   DeviceOrientation = {
@@ -17,14 +19,26 @@
     accY: 0,
     accZ: 0,
     orientHandler: function(e) {
-      DeviceOrientation.alpha = movAvgA.move(e.alpha);
-      DeviceOrientation.beta = movAvgB.move(e.beta);
-      DeviceOrientation.gamma = movAvgG.move(e.gamma);
+      if (oEventCount > O_SKIP_COUNT) {
+        DeviceOrientation.alpha = movAvgA.move(e.alpha);
+        DeviceOrientation.beta = movAvgB.move(e.beta);
+        DeviceOrientation.gamma = movAvgG.move(e.gamma);
+        oEventCount = 0;
+      }
+      else {
+        oEventCount++;
+      }
     },
     motionHandler: function(e) {
-      DeviceOrientation.accX = e.accelerationIncludingGravity.x;
-      DeviceOrientation.accY = e.accelerationIncludingGravity.y;
-      DeviceOrientation.accZ = e.accelerationIncludingGravity.z;
+      if (mEventCount > M_SKIP_COUNT) {
+        DeviceOrientation.accX = e.accelerationIncludingGravity.x;
+        DeviceOrientation.accY = e.accelerationIncludingGravity.y;
+        DeviceOrientation.accZ = e.accelerationIncludingGravity.z;
+        mEventCount = 0;
+      }
+      else {
+        mEventCount++;
+      }
     },
     init: function() {
       DeviceOrientation.active = true;
