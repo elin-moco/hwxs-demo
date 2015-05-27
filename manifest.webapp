@@ -3,8 +3,9 @@
   "description": "Hardware Access WebAPI Demos",
   "launch_path": "/index.html",
   "icons": {
-    "512": "/img/icon-512.png",
-    "128": "/img/icon-128.png"
+    "16": "/img/icons/icon_16.png",
+    "48": "/img/icons/icon_48.png",
+    "128": "/img/icons/icon_128.png"
   },
   "permissions": {
     "geolocation": {
